@@ -23,8 +23,16 @@ namespace Chernyak_3
             double db = double.Parse(Console.ReadLine().Replace(".", ","));
             for (double b = b0; b <= bk; b += db)
             {
-                double T = 0.5 * x + Math.Cos(b) / (x * x - Math.Sqrt(b)) + Math.Tan(n) * Math.Tan(n);
-                Console.WriteLine("T({0:0.00}) = {1:0.000}", b, T);
+                double divider = (x * x - Math.Sqrt(b));
+                if (divider == 0)
+                {
+                    Console.WriteLine("Ошибка на {0} шаге. Знаменатель 0", divider);
+                }
+                else
+                {
+                    double T = 0.5 * x + Math.Cos(b) / (x * x - Math.Sqrt(b)) + Math.Tan(n) * Math.Tan(n);
+                    Console.WriteLine("T({0:0.00}) = {1:0.000}", b, T);
+                }
             }
 
             Console.ReadKey(); //ожидание любой клавиши
