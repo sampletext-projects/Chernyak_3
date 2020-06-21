@@ -30,7 +30,7 @@ namespace Chernyak_3
                 }
                 else
                 {
-                    double T = 0.5 * x + Math.Cos(b) / (x * x - Math.Sqrt(b)) + Math.Tan(n) * Math.Tan(n);
+                    double T = 0.5 * x + Math.Cos(b) / divider + Math.Tan(n) * Math.Tan(n);
                     Console.WriteLine("T({0:0.00}) = {1:0.000}", b, T);
                 }
             }
