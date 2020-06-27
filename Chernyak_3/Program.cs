@@ -24,9 +24,13 @@ namespace Chernyak_3
             for (double b = b0; b <= bk; b += db)
             {
                 double divider = (x * x - Math.Sqrt(b));
-                if (divider == 0)
+                if (Math.Abs(divider) < 0.0001)
                 {
-                    Console.WriteLine("Ошибка на {0} шаге. Знаменатель 0", divider);
+                    Console.WriteLine("Ошибка на {0} шаге. Знаменатель {1}", b, divider);
+                }
+                else if (Math.Abs(Math.Cos(n)) < 0.0001)
+                {
+                    Console.WriteLine("Ошибка на {0} шаге. Тангенс угла {1} не вычисляется", b, n);
                 }
                 else
                 {
